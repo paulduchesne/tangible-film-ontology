@@ -1,9 +1,7 @@
 # Tangible Film Ontology
-##### v0.1 
-##### 2021-04-10 
-##### Paul Duchesne
+##### v0.1 // 2021-04-10 // Paul Duchesne
 
-This ontology for film archives was created with the intention of focusing only on information which can be derived from primary film sources,
+This ontology was created for film archives with the intention of focusing only on information which can be derived from primary film sources,
 ignoring the fact that film institutions often preserve large collections of related documentation.
 
 This concentration on verifiable physical characteristics would assist with interoperability, by favouring reasoning and inference over interpretation.
@@ -117,7 +115,7 @@ An "event" as an action related to the creation, acquisition or modification of 
 | tfo:eventType | Type of event (vocabulary to be decided). | tfo:Printed|
 | tfo:eventPlace | Place of event (vocabulary to be decided). | tfo:Chalon-sur-Saône, France |
 | tfo:eventTime | Time of event.| "1949-04-20"^^xsd:date |
-| tfo:hasAgent | Agent referenced by the credit, or involved in event. | tfo:Kodak|
+| tfo:hasAgent | Agent referenced by the credit, or involved in event. | http://example_archive.org/agent/7722 |
 
 #### Agent
 An action related to the creation, acquisition or modification of a manifestion or item.
