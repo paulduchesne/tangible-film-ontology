@@ -1,0 +1,355 @@
+<?xml version="1.0"?>
+
+<rdf:RDF
+  xml:base="https://github.com/paulduchesne/tangible-film-ontology/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xml="http://www.w3.org/XML/1998/namespace"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.0.1</owl:versionInfo>
+    <owl:ontologyIRI rdf:resource="https://github.com/paulduchesne/tangible-film-ontology/"/>
+    <rdfs:label>Tangible Film Ontology</rdfs:label>
+  </owl:Ontology>
+
+  <owl:Class rdf:about="Work">
+    <rdfs:label>Work</rdfs:label>
+    <skos:definition>A discrete instance of artistic expression.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="Variant">
+    <rdfs:label>Variant</rdfs:label>
+    <skos:definition>An altered instance of a work.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="Manifestation">
+    <rdfs:label>Manifestation</rdfs:label>
+    <skos:definition>A uniform state in which a work or variant is available.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="ImageStream">
+    <rdfs:label>Image Stream</rdfs:label>
+    <skos:definition>A track of visual data.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="PolarityType">
+    <rdfs:label>Polarity Type</rdfs:label>
+    <skos:definition>Polarity of image stream.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="ColourType">
+    <rdfs:label>Colour Type</rdfs:label>
+    <skos:definition>Colour of image stream.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="AudioStream">
+    <rdfs:label>Audio Stream</rdfs:label>
+    <skos:definition>A track of auditory data.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="SubtitleStream">
+    <rdfs:label>Subtitle Stream</rdfs:label>
+    <skos:definition>A track of text data.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="SubtitleVisibilityType">
+    <rdfs:label>Subtitle Visibility Type</rdfs:label>
+    <skos:definition>Visibility of subtitle stream.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="Title">
+    <rdfs:label>Title</rdfs:label>
+    <skos:definition>A name by which the manifestation is identified.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="Credit">
+    <rdfs:label>Credit</rdfs:label>
+    <skos:definition>A recognised contribution by an agent to a manifestation.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="Event">
+    <rdfs:label>Event</rdfs:label>
+    <skos:definition>An action related to the creation, acquisition or modification of a manifestion or item.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="Agent">
+    <rdfs:label>Agent</rdfs:label>
+    <skos:definition>A person or organisation explicitly credited within the manifestion, or subsequently engaging in archival activity on the item.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="Item">
+    <rdfs:label>Item</rdfs:label>
+    <skos:definition>A specific physical instance of a manifestation.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="Object">
+    <rdfs:label>Object</rdfs:label>
+    <skos:definition>A discrete physical component of a item.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="Frame">
+    <rdfs:label>Frame</rdfs:label>
+    <skos:definition>A single image from an image stream.</skos:definition>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="workType">
+    <rdfs:domain rdf:resource="Work"/>
+    <skos:definition>Type of work as defined by the FIAF Cataloguing Manual (controlled vocabulary from FIAF).</skos:definition>
+    <rdfs:label>Work Type</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="hasVariant">
+    <rdfs:domain rdf:resource="Work"/>
+    <rdfs:range rdf:resource="Variant"/>
+    <skos:definition>Variant of work.</skos:definition>
+    <rdfs:label>Has Variant</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="hasManifestation">
+    <rdfs:domain rdf:resource="Work"/>
+    <rdfs:domain rdf:resource="Variant"/>
+    <rdfs:range rdf:resource="Manifestation"/>
+    <skos:definition>Manifestation of work or variant.</skos:definition>
+    <rdfs:label>Has Manifestation</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="variantType">
+    <rdfs:domain rdf:resource="Variant"/>
+    <skos:definition>Type of variant as defined by the FIAF Cataloguing Manual (controlled vocabulary from FIAF).</skos:definition>
+    <rdfs:label>Variant Type</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="hasImageStream">
+    <rdfs:domain rdf:resource="Manifestation"/>
+    <rdfs:range rdf:resource="ImageStream"/>
+    <skos:definition>An image stream within a manifestation.</skos:definition>
+    <rdfs:label>Has Image Stream</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="hasAudioStream">
+    <rdfs:domain rdf:resource="Manifestation"/>
+    <rdfs:range rdf:resource="AudioStream"/>
+    <skos:definition>An audio stream within a manifestation.</skos:definition>
+    <rdfs:label>Has Audio Stream</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="hasSubtitleStream">
+    <rdfs:domain rdf:resource="Manifestation"/>
+    <rdfs:range rdf:resource="SubtitleStream"/>
+    <skos:definition>A subtitle stream within a manifestation.</skos:definition>
+    <rdfs:label>Has Subtitle Stream</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="hasTitle">
+    <rdfs:domain rdf:resource="Manifestation"/>
+    <rdfs:range rdf:resource="Title"/>
+    <skos:definition>Title featured in manifestation.</skos:definition>
+    <rdfs:label>Has Title</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="hasCredit">
+    <rdfs:domain rdf:resource="Manifestation"/>
+    <rdfs:range rdf:resource="Credit"/>
+    <skos:definition>Credit featured in manifestation.</skos:definition>
+    <rdfs:label>Has Credit</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="hasEvent">
+    <rdfs:domain rdf:resource="Manifestation"/>
+    <rdfs:range rdf:resource="Event"/>
+    <skos:definition>Event pertaining to manifestation.</skos:definition>
+    <rdfs:label>Has Event</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="hasItem">
+    <rdfs:domain rdf:resource="Manifestation"/>
+    <rdfs:range rdf:resource="Item"/>
+    <skos:definition>Item of manifestation.</skos:definition>
+    <rdfs:label>Has Item</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="hasColour">
+    <rdfs:domain rdf:resource="ImageStream"/>
+    <rdfs:range rdf:resource="ColourType"/>
+    <skos:definition>Colour of image stream.</skos:definition>
+    <rdfs:label>Has Colour</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="hasPolarity">
+    <rdfs:domain rdf:resource="ImageStream"/>
+    <rdfs:range rdf:resource="PolarityType"/>
+    <skos:definition>Polarity of image stream.</skos:definition>
+    <rdfs:label>Has Polarity</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="hasRatio">
+    <rdfs:domain rdf:resource="ImageStream"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <skos:definition>Aspect ratio of an image stream, represented as a ratio to 1.</skos:definition>
+    <rdfs:label>Has Ratio</rdfs:label>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="hasLanguage">
+    <rdfs:domain rdf:resource="Title"/>
+    <rdfs:domain rdf:resource="AudioStream"/>
+    <rdfs:domain rdf:resource="SubtitleStream"/>
+    <skos:definition>Language of title or audio/subtitle stream (controlled vocabulary from ISO 639-1).</skos:definition>
+    <rdfs:label>Has Language</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="hasChannels">
+    <rdfs:domain rdf:resource="AudioStream"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <skos:definition>Number of audio channels present in stream.</skos:definition>
+    <rdfs:label>Has Channels</rdfs:label>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="subtitleVisibility">
+    <rdfs:domain rdf:resource="SubtitleStream"/>
+    <rdfs:range rdf:resource="SubtitleVisibilityType"/>
+    <skos:definition>Ability to invoke or suppress subtitle stream (Optional or Mandatory).</skos:definition>
+    <rdfs:label>Subtitle Visibility</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="hasTitleType">
+    <rdfs:domain rdf:resource="Title"/>
+    <skos:definition>Type of title (controlled vocabulary of Proper or Devised).</skos:definition>
+    <rdfs:label>Has Title Type</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="hasTitleString">
+    <rdfs:domain rdf:resource="Title"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <skos:definition>Literal string of the title.</skos:definition>
+    <rdfs:label>Has Title String</rdfs:label>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="hasCreditType">
+    <rdfs:domain rdf:resource="Credit"/>
+    <skos:definition>Type of credit as defined by the FIAF Glossary of Filmographic Terms (controlled vocabulary from FIAF).</skos:definition>
+    <rdfs:label>Has Credit Type</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="hasCreditString">
+    <rdfs:domain rdf:resource="Credit"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <skos:definition>Literal string of the credit.</skos:definition>
+    <rdfs:label>Has Credit String</rdfs:label>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="hasAgent">
+    <rdfs:domain rdf:resource="Credit"/>
+    <rdfs:domain rdf:resource="Event"/>
+    <rdfs:range rdf:resource="Agent"/>
+    <skos:definition>Agent referenced by the credit, or involved in event.</skos:definition>
+    <rdfs:label>Has Agent</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="hasEventType">
+    <rdfs:domain rdf:resource="Event"/>
+    <skos:definition>Type of event (vocabulary to be decided).</skos:definition>
+    <rdfs:label>Has Event Type</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="hasEventPlace">
+    <rdfs:domain rdf:resource="Event"/>
+    <skos:definition>Place of event (vocabulary to be decided).</skos:definition>
+    <rdfs:label>Has Event Place</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="hasEventTime">
+    <rdfs:domain rdf:resource="Event"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <skos:definition>Time of event.</skos:definition>
+    <rdfs:label>Has Event Time</rdfs:label>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="hasAgentType">
+    <rdfs:domain rdf:resource="Agent"/>
+    <skos:definition>Type of agent (controlled vocabulary of Person or Organisation).</skos:definition>
+    <rdfs:label>Has Agent Type</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="firstName">
+    <rdfs:domain rdf:resource="Agent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <skos:definition>First name of person.</skos:definition>
+    <rdfs:label>First Name</rdfs:label>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="lastName">
+    <rdfs:domain rdf:resource="Agent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <skos:definition>Last name of person.</skos:definition>
+    <rdfs:label>Last Name</rdfs:label>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="organisationName">
+    <rdfs:domain rdf:resource="Agent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <skos:definition>Name of organisation.</skos:definition>
+    <rdfs:label>Organisation Name</rdfs:label>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="hasObject">
+    <rdfs:domain rdf:resource="Item"/>
+    <rdfs:range rdf:resource="Object"/>
+    <skos:definition>Object of item.</skos:definition>
+    <rdfs:label>Has Object</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="hasWidth">
+    <rdfs:domain rdf:resource="Object"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <skos:definition>Width of object.</skos:definition>
+    <rdfs:label>Has Width</rdfs:label>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="hasLength">
+    <rdfs:domain rdf:resource="Object"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <skos:definition>Length of object.</skos:definition>
+    <rdfs:label>Has Length</rdfs:label>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="hasFrame">
+    <rdfs:domain rdf:resource="ImageStream"/>
+    <rdfs:range rdf:resource="Frame"/>
+    <skos:definition>Frame of an image stream.</skos:definition>
+    <rdfs:label>Has Frame</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:NamedIndividual rdf:about="Positive">
+    <rdfs:label>Positive</rdfs:label>
+    <rdf:type rdf:resource="PolarityType"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="Negative">
+    <rdfs:label>Negative</rdfs:label>
+    <rdf:type rdf:resource="PolarityType"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="Colour">
+    <rdfs:label>Colour</rdfs:label>
+    <rdf:type rdf:resource="ColourType"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="BlackAndWhite">
+    <rdfs:label>Black and White</rdfs:label>
+    <rdf:type rdf:resource="ColourType"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="Optional">
+    <rdfs:label>Optional</rdfs:label>
+    <rdf:type rdf:resource="SubtitleVisibilityType"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="Mandatory">
+    <rdfs:label>Mandatory</rdfs:label>
+    <rdf:type rdf:resource="SubtitleVisibilityType"/>
+  </owl:NamedIndividual>
+
+</rdf:RDF>
