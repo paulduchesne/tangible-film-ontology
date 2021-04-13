@@ -1,5 +1,5 @@
 # Tangible Film Ontology
-##### v0.1 // 2021-04-10 // Paul Duchesne
+##### draft v0.2 // 2021-04-13 // Paul Duchesne
 
 This ontology was created for film archives with the intention of focusing only on information which can be derived from primary film sources,
 ignoring the fact that film institutions often preserve large collections of related documentation.
@@ -14,7 +14,6 @@ A discrete instance of artistic expression.
 | Property | Description | Example |
 | ---- | ---- | ---- |
 | rdf:type | An instance of this class. | tfo:Work|
-| tfo:workType  | Type of work as defined by the FIAF Cataloguing Manual (controlled vocabulary from FIAF). | tfo:Monographic |
 | tfo:hasVariant | Variant of work. | http://example_archive.org/variant/8589 |
 | tfo:hasManifestation | Manifestation of work or variant. | http://example_archive.org/manifestation/2439 |
 
@@ -22,8 +21,7 @@ A discrete instance of artistic expression.
 An altered instance of a work.
 | Property | Description | Example |
 | ---- | ---- | ---- |
-| rdf:type | An instance of this class.| tfo:Variant|
-| tfo:variantType  | Type of variant as defined by the FIAF Cataloguing Manual (controlled vocabulary from FIAF). | tfo:Subtitled |
+| rdf:type | An instance of this class.| tfo:Variant |
 | tfo:hasManifestation | Manifestation of work or variant.| http://example_archive.org/manifestaion/5436 |
 
 #### Manifestation
@@ -62,7 +60,7 @@ Colour of image stream.
 | rdf:type | An instance of this class.| tfo:ColourType|
 
 #### Frame
-A single image from an image stream. 
+A single image from an image stream.
 | Property | Description | Example |
 | ---- | ---- | ---- |
 | rdf:type | An instance of this class. | tfo:Frame|
@@ -94,7 +92,6 @@ A name by which the manifestation is identified.
 | Property | Description | Example |
 | ---- | ---- | ---- |
 | rdf:type | An instance of this class. | tfo:Title|
-| tfo:hasTitleType | Type of title (controlled vocabulary of Proper or Devised).| tfo:Proper |
 | tfo:hasLanguage | Language of title or audio/subtitle stream (controlled vocabulary from ISO 639-1). | tfo:French |
 | tfo:hasTitleString | Literal string of the title. | "LE TEMPESTAIRE" |
 
@@ -118,7 +115,7 @@ An "event" as an action related to the creation, acquisition or modification of 
 | tfo:hasAgent | Agent referenced by the credit, or involved in event. | http://example_archive.org/agent/7722 |
 
 #### Agent
-An action related to the creation, acquisition or modification of a manifestion or item.
+An action related to the creation, acquisition or modification of a manifestation or item.
 | Property | Description | Example |
 | ---- | ---- | ---- |
 | rdf:type | An instance of this class. | tfo:Agent|
@@ -126,6 +123,12 @@ An action related to the creation, acquisition or modification of a manifestion 
 | tfo:firstName| First name of person. | "Jean"^^xsd:string|
 | tfo:lastName| Last name of person. | "Epstein"^^xsd:string|
 | tfo:organisationName| Name of organisation. | "Kodak"^^xsd:string|
+
+#### Agent Type
+Type of agent.
+| Property | Description | Example |
+| ---- | ---- | ---- |
+| rdf:type | An instance of this class.| tfo:AgentType|
 
 #### Item
 A specific physical instance of a manifestation.
@@ -141,5 +144,3 @@ A discrete physical component of a item.
 | rdf:type | An instance of this class. | tfo:Object|
 |tfo:hasWidth| Width of object | "35mm"^^xsd:string |
 |tfo:hasLength| Length of object | "1300m"^^xsd:string |
-
-
